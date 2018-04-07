@@ -1,0 +1,14 @@
+.slider .track {
+    -fx-pref-height:5;
+    -fx-background-color:black;
+}
+
+.slider:vertical .track {
+    -fx-pref-width:8;
+}
+
+.slider .thumb {
+	-fx-background-color: blue;
+    -fx-pref-height: 15;
+    -fx-pref-width: 15;
+}
