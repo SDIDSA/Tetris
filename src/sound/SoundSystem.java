@@ -25,18 +25,18 @@ public class SoundSystem {
 	boolean worked = false;
 	public SoundSystem() {
 		try {
-			line1 = AudioSystem.getAudioInputStream(new File("Tetris-master/src/sound/line1.wav").getAbsoluteFile());
-			line2 = AudioSystem.getAudioInputStream(new File("Tetris-master/src/sound/line2.wav").getAbsoluteFile());
-			line3 = AudioSystem.getAudioInputStream(new File("Tetris-master/src/sound/line3.wav").getAbsoluteFile());
-			line4 = AudioSystem.getAudioInputStream(new File("Tetris-master/src/sound/line4.wav").getAbsoluteFile());
-			grounded = AudioSystem.getAudioInputStream(new File("Tetris-master/src/sound/grounded.wav").getAbsoluteFile());
-			play = AudioSystem.getAudioInputStream(new File("Tetris-master/src/sound/play.wav").getAbsoluteFile());
-			pause = AudioSystem.getAudioInputStream(new File("Tetris-master/src/sound/pause.wav").getAbsoluteFile());
-			lose = AudioSystem.getAudioInputStream(new File("Tetris-master/src/sound/lose.wav").getAbsoluteFile());
-			rotate = AudioSystem.getAudioInputStream(new File("Tetris-master/src/sound/rotate.wav").getAbsoluteFile());
-			move = AudioSystem.getAudioInputStream(new File("Tetris-master/src/sound/move.wav").getAbsoluteFile());
-			music = AudioSystem.getAudioInputStream(new File("Tetris-master/src/sound/music.wav").getAbsoluteFile());
-			pm = AudioSystem.getAudioInputStream(new File("Tetris-master/src/sound/mmusic.wav").getAbsoluteFile());
+			line1 = AudioSystem.getAudioInputStream(new File("src/sound/line1.wav").getAbsoluteFile());
+			line2 = AudioSystem.getAudioInputStream(new File("src/sound/line2.wav").getAbsoluteFile());
+			line3 = AudioSystem.getAudioInputStream(new File("src/sound/line3.wav").getAbsoluteFile());
+			line4 = AudioSystem.getAudioInputStream(new File("src/sound/line4.wav").getAbsoluteFile());
+			grounded = AudioSystem.getAudioInputStream(new File("src/sound/grounded.wav").getAbsoluteFile());
+			play = AudioSystem.getAudioInputStream(new File("src/sound/play.wav").getAbsoluteFile());
+			pause = AudioSystem.getAudioInputStream(new File("src/sound/pause.wav").getAbsoluteFile());
+			lose = AudioSystem.getAudioInputStream(new File("src/sound/lose.wav").getAbsoluteFile());
+			rotate = AudioSystem.getAudioInputStream(new File("src/sound/rotate.wav").getAbsoluteFile());
+			move = AudioSystem.getAudioInputStream(new File("src/sound/move.wav").getAbsoluteFile());
+			music = AudioSystem.getAudioInputStream(new File("src/sound/music.wav").getAbsoluteFile());
+			pm = AudioSystem.getAudioInputStream(new File("src/sound/mmusic.wav").getAbsoluteFile());
 			musics = AudioSystem.getClip();
 			SelectedMusic = pm;
 			musics.open(SelectedMusic);
