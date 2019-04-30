@@ -7,6 +7,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
 import controls.Button;
 import field.Block;
 import field.Field;
@@ -34,7 +35,6 @@ import javafx.scene.layout.BorderStrokeStyle;
 import javafx.scene.layout.BorderWidths;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -45,16 +45,15 @@ import javafx.stage.StageStyle;
 import scoreSaving.Board;
 import shape.AbstractShape;
 import shape.I;
-import shape.L;
 import shape.J;
+import shape.L;
 import shape.O;
-import shape.T;
 import shape.S;
+import shape.T;
 import shape.Z;
 import sound.SoundSystem;
 
 public class UI extends Application {
-	Label speed;
 	double initx, inity;
 	SoundSystem sound;
 	long then = 0;
@@ -246,25 +245,11 @@ public class UI extends Application {
 
 		controls.setAlignment(Pos.CENTER);
 
-		speed = new Label("Speed 1");
-		speed.setFont(Font.font(SCREEN_HEIGHT * 0.08));
+	
 
-		StackPane pane = new StackPane();
-		pane.setMaxWidth(70);
-		pane.setMinWidth(70);
-		pane.setMaxHeight(SCENE_HEIGHT);
-		pane.setMinHeight(SCENE_HEIGHT);
-		pane.getChildren().add(speed);
-		pane.setRotate(-90);
+	
 
-		speed.setTextAlignment(TextAlignment.CENTER);
-		speed.setMaxWidth(SCENE_HEIGHT);
-		speed.setMinWidth(SCENE_HEIGHT);
-		speed.setMaxHeight(70);
-		speed.setMinHeight(70);
-		speed.setTranslateX(100);
-
-		root.getChildren().addAll(pane, field, controls);
+		root.getChildren().addAll(field, controls);
 
 		l = generate();
 		field.add(l);
@@ -451,7 +436,6 @@ public class UI extends Application {
 	}
 
 	void lose() {
-		speed.setText("Speed 1");
 		time = 0.5;
 		p.setDisable(true);
 		r.setText("Start");
@@ -513,7 +497,6 @@ public class UI extends Application {
 
 	public void shuffle() {
 		fifty = stream("0123456".split("")).limit(50).collect(Collectors.joining());
-		//fifty = stream("2".split("")).limit(50).collect(Collectors.joining());
 	}
 
 	public int getI(int posi) {
@@ -525,19 +508,15 @@ public class UI extends Application {
 		if (scores >= 100) {
 			if (scores < 200) {
 				time = 0.4;
-				speed.setText("Speed 2");
 				field.setInvert(true);
 			} else if (scores < 400) {
 				time = 0.3;
-				speed.setText("Speed 3");
 				field.setInvert(false);
 			} else if (scores < 600) {
 				time = 0.2;
-				speed.setText("Speed 4");
 				field.setInvert(true);
 			} else if (scores < 800){
 				time = 0.1;
-				speed.setText("Speed 5");
 				field.setInvert(false);
 			}else  {
 				field.setInvert(true);
